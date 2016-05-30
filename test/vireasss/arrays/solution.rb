@@ -8,6 +8,7 @@ module Vireasss
 
       def search(array, query)
         len = array.size
+        array = array.sort
         i = 0
         get_index = len / 2
         while array[get_index] != query and i < len do
