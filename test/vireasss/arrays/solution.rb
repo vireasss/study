@@ -2,15 +2,11 @@ module Vireasss
   module Arrays
     class << self
       def replace(array)
-        new_array = array.map { |e| (e < 0 ? e = array.min : e ) }
+        min_element = array.min
+        new_array = array.map { |e| (e < 0 ? min_element : e ) }
 
       end
 
-<<<<<<< e9f2d5a3e725d9384bee21b714cfddc6964f4cee
-      def search(_array, _query)
-        0
-      end
-=======
       def search(array, query)
         len = array.size
         array = array.sort
@@ -29,10 +25,6 @@ module Vireasss
         end
         return get_index
        end
->>>>>>> added sort array
     end
   end
 end
-
-array = [ 3, 2, -8, 4, 1, -6, 7, 8, -99 ]
-puts new_array = Vireasss::Arrays.replace(array)
