@@ -3,7 +3,7 @@ module Vireasss
     class << self
       def replace(array)
         min_element = array.min
-        array.map { |e| (e < 0 ? min_element : e ) }
+        array.map { |e| e < 0 ? min_element : e }
 
       end
 
@@ -22,7 +22,7 @@ module Vireasss
           if array[get_index] != query
             get_index = -1
           end
-        return get_index
+          get_index
        end
     end
   end
