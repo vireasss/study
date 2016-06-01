@@ -17,18 +17,17 @@ module Vireasss
         films = films.map { |film| film if film['year'].to_i == year.to_i }.compact
         all_countries = []
         for film in films
-          unless film['country'].nil?
-            name_country = ('%s' % film['country']).gsub(/\s/, '')
-            if name_country.include?(',')
-              names = name_country.split(',')
-              for get_name_country in names
-                unless all_countries.include?(get_name_country)
-                  all_countries.push(get_name_country)
-                end
+          next if film['country'].nil?
+          name_country = ('%s' % film['country']).gsub(/\s/, '')
+          if name_country.include?(',')
+            names = name_country.split(',')
+            for get_name_country in names
+              unless all_countries.include?(get_name_country)
+                all_countries.push(get_name_country)
               end
-            elsif !all_countries.include?(name_country)
-              all_countries.push(name_country)
             end
+          elsif !all_countries.include?(name_country)
+            all_countries.push(name_country)
           end
         end
         result = {}
