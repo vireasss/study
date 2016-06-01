@@ -18,24 +18,17 @@ module Vireasss
         all_countries = []
         for film in films
           next if film['country'].nil?
-          name_country = ('%s' % film['country']).gsub(/\s/, '')
-          if name_country.include?(',')
-            names = name_country.split(',')
-            for get_name_country in names
-              unless all_countries.include?(get_name_country)
-                all_countries.push(get_name_country)
-              end
-            end
-          elsif !all_countries.include?(name_country)
-            all_countries.push(name_country)
+          country_names = ('%s' % film['country']).gsub(/\s/, '').split(',')
+          for get_country_name in country_names
+              all_countries.push(get_country_name) unless all_countries.include?(get_country_name)
           end
         end
         result = {}
         for country in all_countries
           shot = 0
           for film in films
-            name_country = ('%s' % film['country']).gsub(/\s/, '')
-            shot += 1 if name_country.include?(country)
+            country_name = ('%s' % film['country']).gsub(/\s/, '')
+            shot += 1 if country_name.include?(country)
           end
           result[country] = shot
         end
