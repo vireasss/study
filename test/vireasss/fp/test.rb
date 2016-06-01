@@ -19,7 +19,7 @@ class Vireasss::FpTest < Minitest::Test
   # Вычислить по странам сколько фильмов было снято за определенный год
   # disable: line/length
   def test_countries_count
-    skip
+    # skip
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Vireasss::Fp.countries_count(array, 2012)
