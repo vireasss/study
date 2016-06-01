@@ -11,11 +11,7 @@ module Vireasss
         for film in _array
           sum = sum + film["rating_kinopoisk"].to_f
         end
-        puts '++++++++++++++++++++++'
-        puts sum.to_f
-        puts _array.size
-        puts '++++++++++++++++++++++'
-        result = sum / _array.size
+        sum / _array.size
       end
 
       def countries_count(_films, _year)
