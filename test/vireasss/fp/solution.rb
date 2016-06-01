@@ -15,7 +15,7 @@ module Vireasss
       end
 
       def countries_count(_films, _year)
-        puts 1
+        0
       end
     end
   end

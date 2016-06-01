@@ -2,7 +2,8 @@ module Vireasss
   module Arrays
     class << self
       def replace(array)
-        new_array = array.map { |e| (e < 0 ? e = array.min : e ) }
+        min_element = array.min
+        array.map { |e| (e < 0 ? min_element : e ) }
 
       end
 
