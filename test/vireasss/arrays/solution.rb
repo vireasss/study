@@ -18,9 +18,8 @@ module Vireasss
           end
           get_index = (i + len) / 2
         end
-        if array[get_index] != query
-          get_index = -1
-        end
+        get_index = -1 if array[get_index] != query
+
         get_index
       end
     end
