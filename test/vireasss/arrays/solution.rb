@@ -2,23 +2,8 @@ module Vireasss
   module Arrays
     class << self
       def replace(array)
-<<<<<<< HEAD
-        new_array = array.map { |e| (e < 0 ? e = array.min : e ) }
-<<<<<<< HEAD
-=======
-=======
         min_element = array.min
-<<<<<<< HEAD
-        array.map { |e| (e < 0 ? min_element : e ) }
->>>>>>> b358b34... re-correcting code on 1 homework
-=======
         array.map { |e| e < 0 ? min_element : e }
-<<<<<<< HEAD
->>>>>>> 0dce9aa... delete return in def search and delete () in replace
-
->>>>>>> 220ee36... delete commit in code - fp
-=======
->>>>>>> 2740e45... fix remarks correction
       end
 
       def search(array, query)
