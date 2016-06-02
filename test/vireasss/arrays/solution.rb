@@ -11,17 +11,12 @@ module Vireasss
         i = 0
         get_index = len / 2
         while array[get_index] != query && i < len
-          if query > array[get_index]
-            i = get_index + 1
-          else
-            len = get_index - 1
-          end
+          query > array[get_index] ? i = get_index + 1 : len = get_index - 1
           get_index = (i + len) / 2
         end
-        get_index = -1 if array[get_index] != query
-
-        get_index
+        array[get_index] == query ? get_index : -1
       end
+
     end
   end
 end

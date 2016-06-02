@@ -14,7 +14,6 @@ class Vireasss::ArraysTest < Minitest::Test
   # Реализовать бинарный поиск
   # Функция должна возвращать индекс элемента
   def test_bin_search
-    skip
     assert Vireasss::Arrays.search([1], 900) == -1
     assert Vireasss::Arrays.search([1], 1) == 0
     assert Vireasss::Arrays.search([], 900) == -1
