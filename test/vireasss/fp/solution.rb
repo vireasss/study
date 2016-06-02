@@ -5,15 +5,17 @@ module Vireasss
       # film["name"], film["rating_kinopoisk"], film["rating_imdb"],
       # film["genres"], film["year"], film["access_level"], film["country"]
       def rating(_array, _access_level)
-
+        puts _array[1]["access_level"].to_i
+        puts _access_level.to_i
+        puts _array[1]["access_level"].to_i >= _access_level.to_i
         _array = _array.map { |_array| _array if _array["access_level"].to_i >= _access_level.to_i and _array["rating_kinopoisk"].to_f > 0}.compact
         sum = 0
         for film in _array
           sum = sum + film["rating_kinopoisk"].to_f
         end
         puts '++++++++++++++++++++++'
-        puts sum.to_f
-        puts _array.size
+        puts sum
+        puts _array.size.to_f
         puts '++++++++++++++++++++++'
         result = sum / _array.size
       end
