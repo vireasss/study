@@ -16,7 +16,6 @@ module Vireasss
         end
         array[get_index] == query ? get_index : -1
       end
-
     end
   end
 end
