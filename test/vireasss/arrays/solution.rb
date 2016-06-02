@@ -3,16 +3,14 @@ module Vireasss
     class << self
       def replace(array)
         min_element = array.min
-        new_array = array.map { |e| (e < 0 ? min_element : e ) }
-
+        array.map { |e| e < 0 ? min_element : e }
       end
 
       def search(array, query)
         len = array.size
-        array = array.sort
         i = 0
         get_index = len / 2
-        while array[get_index] != query and i < len do
+        while array[get_index] != query && i < len
           if query > array[get_index]
             i = get_index + 1
           else
@@ -20,11 +18,10 @@ module Vireasss
           end
           get_index = (i + len) / 2
         end
-        if array[get_index] != query
-          get_index = -1
-        end
-        return get_index
-       end
+        get_index = -1 if array[get_index] != query
+
+        get_index
+      end
     end
   end
 end

@@ -4,7 +4,7 @@ require_relative './solution.rb'
 class Vireasss::ArraysTest < Minitest::Test
   # Заменить все отрицательные элементы целочисленного массива на минимальное значение элементов массива.
   def test_replace
-    array = [ 3, 2, -8, 4, 9, -6, 7, 8, -99 ]
+    array = [3, 2, -8, 4, 9, -6, 7, 8, -99]
     new_array = Vireasss::Arrays.replace(array)
 
     assert new_array == [3, 2, -99, 4, 9, -99, 7, 8, -99]
@@ -13,6 +13,7 @@ class Vireasss::ArraysTest < Minitest::Test
   # Реализовать бинарный поиск
   # Функция должна возвращать индекс элемента
   def test_bin_search
+    skip
     assert Vireasss::Arrays.search([1], 900) == -1
     assert Vireasss::Arrays.search([1], 1) == 0
     assert Vireasss::Arrays.search([], 900) == -1
