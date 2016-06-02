@@ -9,23 +9,15 @@ class Vireasss::FpTest < Minitest::Test
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Vireasss::Fp.rating(array, '16+')
-    puts '---------------'
-    puts result
-    puts '---------------'
-    # assert result == 2.179
+    assert result == 2.179
 
     result = Vireasss::Fp.rating(array, '0+')
-    puts '---------------'
-    puts result
-    puts '6.464402941176473'
-    puts '---------------'
-    # assert result == 6.464402941176473
+    assert result == 6.464402941176473
   end
 
   # Вычислить по странам сколько фильмов было снято за определенный год
   # disable: line/length
   def test_countries_count
-    skip
     array = CSV.readlines('./test/fixtures/films.csv', headers: true)
 
     result = Vireasss::Fp.countries_count(array, 2012)
